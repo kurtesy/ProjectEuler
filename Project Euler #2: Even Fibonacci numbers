@@ -1,0 +1,15 @@
+from array import *
+t=input()
+while (t>0):
+    i=1;
+    try:
+        n = input()
+    except EOFError:
+        break
+    a, b = 1, 1;
+    total = 0;
+    while a <= n:
+        if a % 2 == 0:
+            total += a
+        a, b = b, a+b
+    print total
