@@ -1,0 +1,21 @@
+import math
+def is_prime(n):
+    if n % 2 == 0 and n > 2: 
+        return False
+    for i in range(3, int(math.sqrt(n)) + 1, 2):
+        if n % i == 0:
+            return False
+    return True
+
+t=long(raw_input())
+while(t>0):
+    t=t-1
+    try:
+        num=long(raw_input())
+    except:
+        break
+    sum=0
+    for i in xrange(2,num+1):
+        if(is_prime(i)):
+            sum=sum+i        
+    print str(sum)
