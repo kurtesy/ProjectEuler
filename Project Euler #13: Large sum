@@ -1,0 +1,11 @@
+n=int(raw_input())
+sum=0
+while(n>0):
+    try:
+        num=long(raw_input())
+        sum=sum+num
+        n=n+1
+    except (EOFError):
+        break 
+stnum=str(sum)
+print stnum[:10]
