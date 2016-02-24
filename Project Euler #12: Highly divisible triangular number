@@ -1,0 +1,43 @@
+def primes_upto(limit):
+    is_prime = [False] * 2 + [True] * (limit - 1) 
+    for n in range(int(limit**0.5 + 1.5)): # stop at ``sqrt(limit)``
+        if is_prime[n]:
+            for i in range(n*n, limit+1, n):
+                is_prime[i] = False
+    return [i for i, prime in enumerate(is_prime) if prime]
+
+def PF(N,prim):
+    nod=1
+    remain = N
+    for i in range(0,len(prim)):
+        if (prim[i] * prim[i] > N):
+            return nod * 2
+        exponent = 1
+        while (remain % prim[i] == 0):
+            exponent=exponent+1;
+            remain = remain / prim[i];
+        nod = nod * exponent;
+        if (remain == 1):
+            return nod
+    return nod
+
+t=int(raw_input())
+while(t>0):
+    t=t-1
+    n=int(raw_input())
+    number = 1
+    i = 2
+    cnt = 0
+    Dn1 = 2
+    Dn = 2
+ 
+    while (cnt <= n):
+        if (i % 2 == 0):
+            Dn = PF(i + 1, primes_upto(1000));
+            cnt = Dn * Dn1;
+        else :
+            Dn1 = PF((i + 1) / 2, primes_upto(1000));
+            cnt = Dn*Dn1;
+        i=i+1
+    number = i * (i - 1) / 2;
+    print number
