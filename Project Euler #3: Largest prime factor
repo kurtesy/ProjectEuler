@@ -1,0 +1,16 @@
+import sys
+import math
+
+def is_prime(num):
+	for j in range(2,int(math.sqrt(num)+1)):
+		if (num % j) == 0: 
+			return False
+	return True
+t=input()
+while(t>0):
+    t=t-1;
+    n=input()
+    for i in range(n,2,-1):
+        if(n%i==0 and is_prime(i)):
+            print i
+            break;
