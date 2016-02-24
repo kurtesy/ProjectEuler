@@ -1,0 +1,7 @@
+t=input()
+while(t>0):
+    t-=1
+    n=input()
+    sum1 = sum([x**2 for x in xrange(1,n+1)])
+    sum2 = sum(xrange(1,n+1))
+    print sum2**2 - sum1
