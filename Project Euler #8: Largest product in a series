@@ -1,0 +1,12 @@
+from operator import mul
+t=input()
+while(t>0):
+    n,m = map(int,raw_input().split())
+    num=list(raw_input())
+    ans=0
+    for i in range(0,n-m):
+        x=1
+        for k in range(0,m):
+            x=x*int(num[i+k])
+        ans=max(ans,x)
+    print ans
