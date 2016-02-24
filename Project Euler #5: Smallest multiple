@@ -1,0 +1,9 @@
+from fractions import gcd
+def lcm(a,b):
+    return (a*b)//gcd(a,b)
+t=input()
+while(t>0):
+    t-=1
+    n=input()
+    l=range(1,n+1)
+    print reduce(lcm,l)
