@@ -1,0 +1,14 @@
+import math
+t=int(raw_input())
+while(t>0):
+    t=t-1
+    sum=0
+    try:
+        n=int(raw_input())
+        x=pow(2,n)
+        st=str(x)
+        for i in st:
+            sum=sum+int(i)
+    except(EOFError) :
+        break
+    print sum 
