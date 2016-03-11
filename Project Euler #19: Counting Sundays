@@ -1,0 +1,25 @@
+import calendar
+t=input()
+while(t>0):
+    t-=1
+    y1,m1,d1 = map(int,raw_input().split())
+    y2,m2,d2 = map(int,raw_input().split())
+    count=0
+    if(d1>1):
+        for j in range(m1+1,13):
+            if(calendar.weekday(y1,j,1)==6):
+                count+=1
+    else:
+        for j in range(m1,13):
+            if(calendar.weekday(y1,j,1)==6):
+                count+=1
+    for j in range(1,m2+1):
+        if(calendar.weekday(y2,j,1)==6):
+            count+=1
+    for i in range(y1+1,y2):
+        for j in range(1,13):
+            if(calendar.weekday(i,j,1)==6):
+                count+=1
+    print count
+            
+            
