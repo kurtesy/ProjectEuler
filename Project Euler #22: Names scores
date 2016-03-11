@@ -1,0 +1,17 @@
+t=input()
+name=list()
+value=list()
+for i in range(0,t):
+    s=raw_input()
+    name.append(s)
+name.sort()
+for i in range(0,t):
+    sum=0
+    for j in name[i]:
+        sum+=ord(j)-ord('A')+1
+    value.append(sum*(i+1))
+q=input()
+while(q>0):
+    q-=1
+    qname=raw_input()
+    print value[name.index(qname)]
