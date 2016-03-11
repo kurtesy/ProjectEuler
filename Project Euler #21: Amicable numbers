@@ -1,0 +1,40 @@
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+using namespace std;
+int d(int x)
+    {
+    int sum=1;
+    for(int i=2;i*i<x;i++)
+        {
+        if(x%i==0)
+            {
+            sum+=i;
+            sum+=x/i;
+        }
+        if(x==i*i) sum-=i;
+    }
+    return sum;
+}
+int main()
+    {
+    int i,j,k,n,x1,y1,x2,y2,x3,y3,t;
+    cin>>t;
+    int test[]={220, 284, 1184, 1210, 2620, 2924, 5020, 5564, 6232, 6368, 10744, 10856, 12285, 14595, 17296, 18416, 63020, 66928, 66992, 67095, 69615, 71145, 76084, 79750, 87633, 88730, 100485, 122265, 122368, 123152, 124155, 139815, 141664, 142310};
+    while(t--)
+        {
+        cin>>n;
+        x1=0;
+        for(j=0;test[j]<n;j++)
+            {
+            k=d(test[j]);
+            
+            if(d(k)==test[j])
+                {
+               // cout<<k<<endl;
+                x1+=test[j];
+            }
+        }
+        cout<<x1<<endl;
+        }
+    }
