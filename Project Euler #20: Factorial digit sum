@@ -1,0 +1,12 @@
+from math import factorial
+
+t=input()
+while(t>0):
+    n=input()
+    t=t-1
+    sum=0
+    x=factorial(n)
+    st=str(x)
+    for i in st:
+        sum=sum+int(i)
+    print sum    
